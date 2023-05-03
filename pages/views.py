@@ -6,8 +6,12 @@ from .models import Home,About,Contact,Service
 def index(request):
     try:
         home = Home.objects.all()
+        about = About.objects.all()
+        service = Service.objects.all()
         context = {
-        'home':home
+        'homes':home,
+        'abouts':about,
+        'services':service
         }
         print(home.values_list())
     except Exception as ex:
